@@ -176,49 +176,7 @@ def flip_gradient(x):
        return FlipGrad()(x)
 
 
-"""==============Net Domain_Ped========="""
-class Domain_Pred2(nn.Module):
 
-	def __init__(self, input_nc, output_nc):
-		super(Domain_Pred2, self).__init__()
-		self.input_nc = input_nc
-		self.output_nc = output_nc
-
-		self.fc1 = nn.Linear(48, 100)
-                self.relu1 = nn.LeakyReLU(0.2, True)
-
-  
-
-                self.fc2 = nn.Linear(100, 2)
-  
-	def save_network(self, network, network_label, epoch_label, save_dir ):
-		save_filename = '%s_net_%s.pkl' % (epoch_label, network_label)
-    	        save_path = os.path.join(save_dir, save_filename)
-    	        torch.save(network.state_dict(), save_path)
-
-        def forward(self, x):
-
-            x = flip_gradient(x)
-
-    	    out = self.fc1(x)
-    	   
-      	    out = self.relu1(out)
-
-    	    out = self.fc2(out)
-
-    	    return out
-
-class FlipGrad(Function):
-       def forward(self, x):
-              
-              return x.view_as(x)
-       def backward(self, grad_output):
-
-             
-          
-              return grad_output.neg()
-def flip_gradient(x):
-       return FlipGrad()(x)
 
 
 
