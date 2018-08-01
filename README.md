@@ -7,7 +7,7 @@ DiDA is implemented and tested with Pytorch in python2 and use tensorboard for v
 Take DSN as backbone and dataset as MNIST-MNISTM as an example：
 
 ```
-python train.py --datarood ./traindata --name DSN_m --model DSN_m --no_tropout --lr 0.01 --lr_de 1 - gpu_ids 0 --lr_policy nopolicy --which_method DSN
+python train.py --datarood ./traindata --name DSN_m --model DSN_mv2 --no_tropout --lr 0.01 --lr_de 1 - gpu_ids 0 --lr_policy nopolicy --which_method DSN
 ```
 run the DA backbone
 ```
