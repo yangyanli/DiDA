@@ -22,7 +22,6 @@ iteration of DA
 python train2.py --datarood ./traindata --name Di_DSN_iter1m --model Di_iter_DSN_m --no_tropout --lr 0.00001 --lr_de 1 - gpu_ids 0 --lr_policy nopolicy --which_method DSN --batchSize 64 --which_epoches_DA [which_epoches_DA] --which_usename_DA DSN_miter1step1 --which_epoches_Di [which_epoches_Di] --which_usename_Di Di_DSN_m 
 ```
 iteration of Di
-```
 
 use tensorboard for visualization:
 ```
